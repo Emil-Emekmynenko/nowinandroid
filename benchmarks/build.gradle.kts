@@ -26,6 +26,9 @@ android {
     defaultConfig {
         minSdk = 28
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.kaspersky.kaspresso.runner.KaspressoRunner"
+
+        testInstrumentationRunnerArguments["clearPackageData"] = "true"
 
         buildConfigField("String", "APP_BUILD_TYPE_SUFFIX", "\"\"")
     }
