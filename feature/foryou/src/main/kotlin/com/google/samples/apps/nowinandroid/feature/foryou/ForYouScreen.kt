@@ -23,8 +23,11 @@ import androidx.activity.compose.ReportDrawnWhen
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.animation.slideInVertically
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.animation.slideOutVertically
+import com.google.samples.apps.nowinandroid.core.designsystem.lazyListItemPosition
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -367,7 +370,9 @@ private fun TopicSelection(
                 .fillMaxWidth()
                 .padding(horizontal = 12.dp)
                 .align(Alignment.BottomStart),
-            state = lazyGridState.scrollbarState(itemsAvailable = onboardingUiState.topics.size),
+            state = lazyGridState.scrollbarState(
+                itemsAvailable = onboardingUiState.topics.size
+            ),
             orientation = Orientation.Horizontal,
         )
     }
